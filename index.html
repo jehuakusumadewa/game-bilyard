@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="bg-white">
+      <div class="container px-2 py-20 mx-auto">
+        <div class="flex flex-wrap text-center">
+          <!-- start card 1 -->
+          <div class="p-4 w-full sm:w-1/2 lg:w-1/3">
+            <div class="bg-gray-900 w-full p-5">
+              <div class="border rounded-md mt-10">
+                <div class="text-white">
+                  <h1 class="text-2xl my-3">Meja 01</h1>
+                  <h5 id="namaDisplay">Nama :</h5>
+                  <h5 id="jenisDisplay">Jenis :</h5>
+                  <h5 id="timeDisplay">Waktu : 00:00:00</h5>
+                  <h5 id="priceDisplay">Harga : Rp 0</h5>
+                </div>
+              </div>
+              <div>
+                <button
+                  id="toggleButton"
+                  class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 my-3"
+                >
+                  Nyalakan
+                </button>
+                <button
+                  id="payButton"
+                  class="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-blue-700 my-3 hidden"
+                >
+                  Bayar
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- end card 1 -->
+
+          <!-- card 2 -->
+          <div class="p-4 w-full sm:w-1/2 lg:w-1/3">
+            <div class="bg-gray-900 w-full p-5">
+              <div class="border rounded-md mt-10">
+                <div class="text-white">
+                  <h1 class="text-2xl my-3">Meja 02</h1>
+                  <h5 id="namaDisplay2">Nama :</h5>
+                  <h5 id="jenisDisplay2">Jenis :</h5>
+                  <h5 id="timeDisplay2">Waktu : 00:00:00</h5>
+                  <h5 id="priceDisplay2">Harga : Rp 0</h5>
+                </div>
+              </div>
+              <div>
+                <button
+                  id="toggleButton2"
+                  class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 my-3"
+                >
+                  Nyalakan
+                </button>
+                <button
+                  id="payButton2"
+                  class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700 my-3 hidden"
+                >
+                  Bayar
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- end card 2 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <section
+      id="myModal"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden"
+    >
+      <div class="bg-white rounded-lg shadow-lg p-5 w-11/12 md:w-1/3">
+        <span class="close text-gray-500 cursor-pointer float-right text-xl"
+          >&times;</span
+        >
+        <form id="nameForm" class="mt-4">
+          <label for="name" class="block text-gray-700">Nama: </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="border rounded-md w-full p-2 mt-2"
+            required
+          />
+          <label for="timeSelect" class="block text-gray-700 mt-4"
+            >Pilih Waktu:</label
+          >
+          <select id="timeSelect" class="border rounded-md w-full p-2 mt-2">
+            <option value="3600">1 Jam</option>
+            <option value="7200">2 Jam</option>
+            <option value="10800">3 Jam</option>
+          </select>
+
+          <label for="jenisSelect" class="block text-gray-700 mt-4"
+            >Jenis:</label
+          >
+          <select id="jenisSelect" class="border rounded-md w-full p-2 mt-2">
+            <option value="Biasa: 35000/Jam">Biasa: 35000/Jam</option>
+            <option value="Vip: 45000/Jam">Vip: 45000/Jam</option>
+          </select>
+
+          <input
+            type="submit"
+            value="submit"
+            class="mt-4 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700"
+          />
+        </form>
+      </div>
+    </section>
+
+    <!-- Payment Modal -->
+    <section
+      id="paymentModal"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden"
+    >
+      <div class="bg-white rounded-lg shadow-lg p-5 w-11/12 md:w-1/3">
+        <span
+          class="closePaymentModal text-gray-500 cursor-pointer float-right text-xl"
+        >
+          &times;
+        </span>
+        <h2 class="text-lg font-bold">Rincian Pembayaran</h2>
+        <p id="paymentDetails"></p>
+        <button
+          id="confirmPaymentButton"
+          class="mt-4 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700"
+        >
+          Konfirmasi Pembayaran
+        </button>
+      </div>
+    </section>
+    <script src="style.js"></script>
+  </body>
+</html>
